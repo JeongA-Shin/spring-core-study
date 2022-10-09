@@ -2,8 +2,10 @@ package group.core.member;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
 //구현(배우, 차 모델기종 , 대체 가능) == 구현체
+@Component
 public class MemoryMemberRepository implements MemberRepository{
     
     private static Map<Long,Member> store = new HashMap<>();

@@ -3,7 +3,10 @@ package group.core.order;
 import group.core.discount.DiscountPolicy;
 import group.core.member.Member;
 import group.core.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
     
     //이전에 App Config(공연 기획자)가 없어서 생성자 주입 없이 역할과 구현을 직접 연결해줘야 했던 코드
@@ -17,6 +20,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
     
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
